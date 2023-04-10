@@ -8,7 +8,8 @@ test> // data will be inserted when collections are created automatically
 test> db.cust1.insert({ _id: '0193', name: 'anu', hmtp: '2bhk', loc: 'palani' })
 DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
 { acknowledged: true, insertedIds: { '0': '0193' } }
-test> db.cust1.insert({ _id: '4567', name: 'vino', hmtp: '1bhk', loc: 'erode' })
+test> db.cust1.insert({ _id: '4567', name: 'vino', hmtp: '1bhk', l
+oc: 'erode' })
 { acknowledged: true, insertedIds: { '0': '4567' } }
 test> db.cust1.insert({ _id: '2389', name: 'prem', hmtp: '1bhk', loc: 'tirupur' })
 { acknowledged: true, insertedIds: { '0': '2389' } }
@@ -26,9 +27,6 @@ test> db.lab.insert({ _id: 'supervisor', name: 'kani', dow: '241', slry: '45000'
 { acknowledged: true, insertedIds: { '0': 'supervisor' } }
 test> db.lab.insert({ _id: 'helper', name: 'ruba', dow: '200', slry: '43000' })
 { acknowledged: true, insertedIds: { '0': 'helper' } }
-test> db.lab.insert({ _id: 'helper', name: 'ranjith', dow: '198', slry: '38000' })
-Uncaught:
-MongoBulkWriteError: E11000 duplicate key error collection: test.lab index: _id_ dup key: { _id: "helper" }
 Result: BulkWriteResult {
   insertedCount: 0,
   matchedCount: 0,
@@ -38,18 +36,6 @@ Result: BulkWriteResult {
   upsertedIds: {},
   insertedIds: { '0': 'helper' }
 }
-Write Errors: [
-  WriteError {
-    err: {
-      index: 0,
-      code: 11000,
-      errmsg: 'E11000 duplicate key error collection: test.lab index: _id_ dup key: { _id: "helper" }',
-      errInfo: undefined,
-      op: { _id: 'helper', name: 'ranjith', dow: '198', slry: '38000' }
-    }
-  }
-]
-test>
 
 test> db.mat.insert({ _id: 'm20', steel: '30tmt', door: 'pw', ratio: '1:1:5:3', rt: 'brick', pip: null })
 { acknowledged: true, insertedIds: { '0': 'm20' } }
@@ -126,8 +112,7 @@ test> db.consult.updateOne({ _id: 'sbi' }, { $set: { loc: 'ooty' }})
   upsertedCount: 0
 }
 test> db.consult.updateOne({ _id: 'kvb' }, { $set
-...
-...
+
 test> db.consult.updateOne({ _id: 'kvb' },{$set:{loc:'delhi'}})
 {
   acknowledged: true,
